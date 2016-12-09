@@ -1,0 +1,16 @@
+#!/bin/bash
+
+	for rta in AODV OLSR
+	do	
+		for nod in 20 
+		do
+	       		for tInt in 0.1 0.5 0.9
+			do
+				for p in 1.0 10.0 100.0 500.0
+				do
+			  
+			    	./waf --run "scratch/p3v9 --nodes=$nod --trafficInt=$tInt --Ptx=$p --rtalgo=$rta" 1>> "outputn20.txt"
+
+			done
+		done
+	done
